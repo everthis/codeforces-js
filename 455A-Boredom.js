@@ -43,10 +43,10 @@ rl.on("close", () => {
   const f = Array(111111).fill(0)
   for (let i = 0; i < v.length; i++) {
     let pr = i - 1;
-    while (pr >= 0 && v[pr][0] + 1 == v[i][0]) pr--;
-    if (pr == -1) f[i] = 1 * v[i][0] * v[i][1];
+    if (pr >= 0 && v[pr][0] + 1 === v[i][0]) pr--;
+    if (pr === -1) f[i] = 1 * v[i][0] * v[i][1];
     else f[i] = f[pr] + 1 * v[i][0] * v[i][1];
-    if (i != 0) f[i] = Math.max(f[i], f[i - 1]);
+    if (i !== 0) f[i] = Math.max(f[i], f[i - 1]);
   }
   const res = f[v.length - 1]
 
